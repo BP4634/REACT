@@ -2,6 +2,7 @@
 // Write, Edit and Run your Javascript code using JS Online Compiler
 
   import React from 'react';
+  import {useState} from 'react';
 
 
 
@@ -36,22 +37,34 @@ const data = [
     "version": 2.53
   }
   ]
+
   
 
   
 export function App(props) {
-     const topData = data.map(item => {
+
+  const [list, setList] = useState(data)
+  
+  const ReverseOrder = () => {
+    setList([...list].reverse())
+  }
+
+
+
+
+     const topData = list.map((item) => {
       const itemText = `${item.name} - ${item.id}`
-     return <li>{itemText}</li>
+     return <li key={item.id} >{itemText}</li>
       
   })
     
   return (
       
     <div className='App'>
-     <ul>
+    <button onClick={ReverseOrder} >Reverse Order</button>
+     <ol>
      {topData}
-     </ul>
+     </ol>
     </div>
   );
 }
