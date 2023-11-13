@@ -14,8 +14,9 @@ export function App(props) {
       <form onSubmit={handleSubmit}>
         <fieldset>
           <div>
-          <label>Name:</label>
+          <label htmlFor="name">Name:</label>
           <input
+          id="name"
           type='text'
           placeholder='Name'
           name='name'
@@ -23,7 +24,7 @@ export function App(props) {
           onChange={(e)=> setName(e.target.value)}
           />
           </div>
-          <button type='submit'>Submit</button>
+          <button disabled={!name} type='submit'>Submit</button>
         </fieldset>
       </form>
       
