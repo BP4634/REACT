@@ -15,7 +15,7 @@ const Alert = ({ children }) => {
 }
 
 const DeleteButton = () => {
-    return <Button backgroundColort="red">Delete</Button>
+    return <Button backgroundColor="red">Delete</Button>
 }
 
 export function App(props) {
